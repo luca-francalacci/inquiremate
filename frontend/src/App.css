@@ -1,0 +1,149 @@
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+}
+
+
+
+.box_app{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+@media (max-width: 500px) {
+  .box_app{
+    margin-top: auto;
+    flex-direction: column;
+
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.state_text_field-box{  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 12pt ;
+
+  width: 1000px;
+
+}
+.query,.scraping_response{
+  border-radius: 10px;
+  box-shadow: 10px 8px 5px rgba(0, 0, 0, 0.349);
+
+}
+.query{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 500px;
+  height: 300px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.select{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.select>*{
+  width: 45%;
+}
+
+.load_box{
+  display: flex;
+  width: 80%;
+  height: 80%;
+  align-items: center;
+  position: absolute;
+  margin: auto;
+}
+
+.load{
+  align-items: center;
+  margin: auto;
+
+}
+.scraping_response{
+  width: 111%;
+  height: 200px;
+  margin-top: 2%;
+}
+
+@media (max-width: 1000px) {
+  .state_text_field-box {
+    width: 90%;
+  }
+  .scraping_response{
+      margin-top: 5%;
+  }
+  .load_box{
+      height: 40%;
+  }
+}
+
+
+.scraping_response::-webkit-scrollbar {
+  width: 5px; 
+  height: 5px;
+}
+
+.scraping_response::-webkit-scrollbar-track {
+  background: #f4f4f400; 
+}
+
+.scraping_response::-webkit-scrollbar-thumb {
+  background-color: #ffffff; 
+  border-radius: 4px; 
+  backdrop-filter: blur(10px); 
+}
+
+
+/* ----------------------------------------------- */
+/* File CSS */
+.custom-select, .custom-input {
+  outline: none; /* Rimuove il bordo di selezione */
+  border: none; /* Rimuove il bordo del componente */
+}
+
+/* In alternativa, se vuoi mantenere un bordo ma non vuoi che cambi colore durante la selezione */
+.custom-select, .custom-input {
+  outline-color: transparent; /* Imposta il colore dell'outline a trasparente */
+}
+
