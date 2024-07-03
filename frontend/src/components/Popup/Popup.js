@@ -12,7 +12,9 @@ import loadSVG from '../../img/load.svg';
 import InputText from '../InputText/InputText';
 import { Checkbox } from '@mui/material';
 
-export default function Popup({ theme_color, changeButtonClose, list_link }) {
+import Load from '../Load/Load';
+
+export default function Popup({ theme_color, changeButtonClose, list_link ,setRequestOkay}) {
 
     const rootRef = React.useRef(null);
     const [selectedLink, setSelectedLink] = React.useState(null);
@@ -49,8 +51,6 @@ export default function Popup({ theme_color, changeButtonClose, list_link }) {
     },[depthError,linkError])
 
     function sendMsg() {
-        // console.log("selectionDepth: "+selectionDepth)    
-        // console.log("selectionDepth: "+!isNaN(selectionDepth))
         console.log("selectedLink: "+selectedLink) 
         console.log("selectedLink: "+isNaN(selectedLink)) 
 
@@ -83,18 +83,17 @@ export default function Popup({ theme_color, changeButtonClose, list_link }) {
                     link.setAttribute('download', 'file.json')
                     document.body.appendChild(link)
                     link.click()
-                
                     setLoad(false)
                     changeButtonClose(false)
-
-                    // setApiResult("File scaricato")
+                    setRequestOkay("Eseguita con successo!")
                 })
                 .catch(error => {
                     console.log("C'è stato un errore")
                 // Imposta load su false in caso di errore
-                //   setApiResult("C'è stato un errore")
                     setLoad(false)
                     changeButtonClose(false)
+                    setRequestOkay("Riprovare")
+
                 })
         } else {
             if(selectedLink == null){
@@ -140,7 +139,8 @@ export default function Popup({ theme_color, changeButtonClose, list_link }) {
                     {load ? 
                         <div className='load_box'>
                             <div className='load'>
-                                <img src={loadSVG} alt="Loading" />
+                                <Load theme_color={{theme_color}}/>
+                                
                             </div>
                         </div>: 
                     null}
@@ -199,7 +199,7 @@ export default function Popup({ theme_color, changeButtonClose, list_link }) {
                         <div id='div_error'>
                             {depthError}
                         </div>
-                        <div style={{fontSize: '10pt'}}>
+                        {/* <div style={{fontSize: '10pt'}}>
                             <Checkbox sx={{
                             color:theme_color.light,
                             '&.Mui-checked': {
@@ -209,7 +209,7 @@ export default function Popup({ theme_color, changeButtonClose, list_link }) {
                             onChange={()=>{
                                 setIsChecked(!isChecked)
                             }}
-                            /> Riassunto con ChatGpt </div>
+                            /> Riassunto con ChatGpt </div> */}
                         
                         <ButtonSendMsg 
                             theme_color={theme_color} 

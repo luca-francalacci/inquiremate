@@ -8,7 +8,7 @@ import Load from '../Load/Load'
 export default function Query({theme_color}){
 
     const [question, setQuestion] = React.useState('') 
-    const [queryResult, setQueryResult] = React.useState('Nessuna risposta')
+    const [queryResult, setQueryResult] = React.useState('In attesa')
     const [load, setLoad] = React.useState(false) 
     const [queryError,setQueryError] = React.useState('')
     
@@ -40,7 +40,10 @@ export default function Query({theme_color}){
                     if(element[0]==='.'){
                         element=element.slice(1)
                     }
-                    txt = txt+"<li>"+element+"</li>"
+                    if(element.length!=0){
+                        txt = txt+"<li>"+element+"</li>"+"<br/>"    
+                    }
+                    
                 });
                 txt = txt+"</ul>"
                 console.log(txt)

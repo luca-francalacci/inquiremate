@@ -21,6 +21,7 @@ export default function Scraping({theme_color}){
     const [listLink, setListLink] = React.useState([])
     const [queryError,setQueryError] = React.useState('')
     const [urlError,setUrlError] = React.useState(null)
+    const [requestOk, setRequestOkay] = React.useState('')
 
 
     function changeQuery(event){
@@ -96,6 +97,7 @@ export default function Scraping({theme_color}){
             theme_color={theme_color} 
             changeButtonClose={changeButtonClose} 
             list_link={listLink}
+            setRequestOkay={setRequestOkay}
           />):(<></>)}
           
           <div className='InquireMate_query'
@@ -124,13 +126,14 @@ export default function Scraping({theme_color}){
                     }}>
                     <SelectNumPag theme_color={theme_color} data={list_n_query} changeValue={changeUrl} />
                   </div>
-                
               </div>
             </div>
-          
-            
+
             <div id='div_error'>{urlError}</div>
             <ButtonSendMsg theme_color={theme_color} onValueChange={onValueChange} />
+            <div className='scraping_ok'>
+              {requestOk}
+            </div>
           </div>
           {/* Mostra l'immagine di caricamento solo quando load è true */}
           {load ?  
