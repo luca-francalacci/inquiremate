@@ -59,8 +59,7 @@ function App() {
     'Scraping': <Scraping theme_color={theme_color}/>,
     'Query': <Query theme_color={theme_color}/>
   }
-  
-  
+
   return (
   <IndexContext.Provider value={[indexPage, setIndexPage]}>
     

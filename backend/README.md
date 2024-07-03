@@ -14,22 +14,23 @@ Utilizza Chromadb, per salvare gli embedding.
 
 ### Prerequisiti:
 - argparse==1.4.0
-- chromadb==0.4.24
+- chromadb==0.5.3
 - python-dotenv==1.0.1
-- fastapi==0.110.2
-- googlesearch-python==1.2.3
+- fastapi==0.111.0
+- googlesearch-python==1.2.4
 - html2text==2024.2.26
-- langchain==0.1.16
-- lxml==5.2.1
+- langchain==0.2.6
+- langchain-community==0.2.6
+- lxml==5.2.2
 - numpy==1.26.4
-- openai==1.23.2
-- pdfreader==0.1.12
-- pypdf==4.0.0
-- python==3.10.12
-- sentence-transformers==2.7.0
-- torch==2.2.2
-- tqdm==4.66.2
-- uvicorn==0.29.0
+- openai==1.35.9
+- pdfreader==0.1.15
+- pypdf==4.2.0
+- python==3.12.0rc3
+- sentence-transformers==3.0.1
+- torch==2.3.1
+- tqdm==4.66.4
+- uvicorn==0.30.1
 
 ### Instruzione
 

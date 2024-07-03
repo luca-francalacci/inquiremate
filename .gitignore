@@ -1,4 +1,5 @@
 backend/.venv
+backend/.new_venv
 backend/.env
 backend/json/*
 backend/__pycache__
