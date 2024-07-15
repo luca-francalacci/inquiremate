@@ -34,7 +34,6 @@ export default function Query({theme_color}){
             .then(response => response.json())
             .then(data => {
                 setLoad(false)
-                console.log(data[0])
                 let txt = "<ul>"
                 data[0].forEach(element => {
                     if(element[0]==='.'){
@@ -46,7 +45,6 @@ export default function Query({theme_color}){
                     
                 });
                 txt = txt+"</ul>"
-                console.log(txt)
                 setQueryResult(txt)
             })
             .catch(error => {
@@ -54,7 +52,6 @@ export default function Query({theme_color}){
                 console.error(error);
             })
         } else {
-            console.log(isNaN(question))
             setQueryError('* digitare una domanda')
         }
         

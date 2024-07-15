@@ -51,8 +51,6 @@ export default function Popup({ theme_color, changeButtonClose, list_link ,setRe
     },[depthError,linkError])
 
     function sendMsg() {
-        console.log("selectedLink: "+selectedLink) 
-        console.log("selectedLink: "+isNaN(selectedLink)) 
 
         if((selectionDepth!=null && selectionDepth > -1 && !isNaN(selectionDepth)) && 
             selectedLink!=null){
@@ -64,7 +62,6 @@ export default function Popup({ theme_color, changeButtonClose, list_link ,setRe
                     'd': selectionDepth,
                     'summary': isChecked
                 }
-                console.log(post_data)
 
                 let fetch_api = 'http://127.0.0.1:8000/inquireMate/scraping_embedding'
 
@@ -93,12 +90,11 @@ export default function Popup({ theme_color, changeButtonClose, list_link ,setRe
                     
                 })
                 .catch(error => {
-                    console.log("C'è stato un errore")
+                    console.error('Errore nella richiesta fetch:', error)
                 // Imposta load su false in caso di errore
                     setLoad(false)
                     changeButtonClose(false)
                     setRequestOkay("Riprovare")
-
                 })
         } else {
             if(selectedLink == null){

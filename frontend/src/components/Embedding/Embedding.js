@@ -38,7 +38,6 @@ export default function Embedding({theme_color}){
   function onValueChange() {
 
     if (model !== null && newCollection !== null) {
-      console.log("valori pronti per esser inviati") 
 
       // Imposta load su true quando i valori sono pronti per l'invio
       // setLoad(true) 
@@ -57,7 +56,6 @@ export default function Embedding({theme_color}){
       }
       metadata['user'] = 'admin'
       metadata['theme'] = theme
-      console.log(metadata)
 
       if(scraping===0){
         fetch_api="http://127.0.0.1:8000/embedding"
@@ -87,7 +85,6 @@ export default function Embedding({theme_color}){
           return response.json()
         })
         .then(data => {
-          console.log('data: ',data)
           const url = window.URL.createObjectURL(new Blob([JSON.stringify(data)]))
           const link = document.createElement('a')
           link.href = url
@@ -95,24 +92,20 @@ export default function Embedding({theme_color}){
           document.body.appendChild(link)
           link.click()
       
-          console.log(data)
           setLoad(false)
           setApiResult("File scaricato")
         })
         .catch(error => {
-          console.log("Errore")
+          console.error('Errore nella richiesta fetch:', error)
           // Imposta load su false in caso di errore
           setApiResult("C'è stato un errore")
           setLoad(false)
         })
-    } else {
-      console.log("none")
     }
   }
 
   React.useEffect(()=>{
     return
-    console.log("---SCRAPING:"+scraping)
     setNewDeep(null)
     setModel(null)
   },[scraping])

@@ -36,8 +36,6 @@ export default function Scraping({theme_color}){
     
 
     function onValueChange() {
-      console.log('newQuery: '+newQuery.length)
-      console.log('numUrl: '+numUrl)
 
       if(newQuery.length>0 && numUrl!=null){
         setLoad(true)
@@ -61,9 +59,6 @@ export default function Scraping({theme_color}){
         .then(data => {
           setListLink(data)
           setButtonClose(true)
-          listLink.forEach(element => {
-            console.log(element)
-          });
           setLoad(false)
         })
         .catch(error => {
@@ -73,8 +68,6 @@ export default function Scraping({theme_color}){
         
       } else {
         if(newQuery.length<1){
-          console.log(newQuery==null)
-          console.log(isNaN(newQuery))
           setQueryError('* digitare una domanda')
         }
         if(numUrl==null){
@@ -84,9 +77,7 @@ export default function Scraping({theme_color}){
     }
     
     function changeButtonClose(event){
-      console.log("[InquireMate] changeButtonClose: "+event)
       setButtonClose(event)
-      console.log(buttonClose)
     }
       
     return (<>
