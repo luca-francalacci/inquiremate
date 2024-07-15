@@ -77,15 +77,20 @@ export default function Popup({ theme_color, changeButtonClose, list_link ,setRe
                 })
                 .then(response => response.json())
                 .then(data => {
-                    const url = window.URL.createObjectURL(new Blob([JSON.stringify(data)]))
-                    const link = document.createElement('a')
-                    link.href = url
-                    link.setAttribute('download', 'file.json')
-                    document.body.appendChild(link)
-                    link.click()
+                    if(data==false){
+                        setRequestOkay("Riprovare")
+                    } else{
+                        const url = window.URL.createObjectURL(new Blob([JSON.stringify(data)]))
+                        const link = document.createElement('a')
+                        link.href = url
+                        link.setAttribute('download', 'file.json')
+                        document.body.appendChild(link)
+                        link.click()
+                        setRequestOkay("Eseguita con successo!")
+                    }
                     setLoad(false)
                     changeButtonClose(false)
-                    setRequestOkay("Eseguita con successo!")
+                    
                 })
                 .catch(error => {
                     console.log("C'è stato un errore")
@@ -199,17 +204,6 @@ export default function Popup({ theme_color, changeButtonClose, list_link ,setRe
                         <div id='div_error'>
                             {depthError}
                         </div>
-                        {/* <div style={{fontSize: '10pt'}}>
-                            <Checkbox sx={{
-                            color:theme_color.light,
-                            '&.Mui-checked': {
-                                color: theme_color.light, // Cambia il colore della checkbox quando è selezionata
-                            },
-                            }}
-                            onChange={()=>{
-                                setIsChecked(!isChecked)
-                            }}
-                            /> Riassunto con ChatGpt </div> */}
                         
                         <ButtonSendMsg 
                             theme_color={theme_color} 

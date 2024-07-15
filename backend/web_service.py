@@ -164,11 +164,9 @@ def chroma_embedding(data:DataEmbedding):
         return False
 
 
-s = ScrapingBeautifulSoup(logger=logger)
-
-
 @app.post("/inquireMate/web_search")
 def inquireMate(data:DataScrapingBS):
+    s = ScrapingBeautifulSoup(logger=logger)
 
     if data.query is None:
         return None
@@ -178,6 +176,7 @@ def inquireMate(data:DataScrapingBS):
 
 @app.post("/inquireMate/scraping_embedding")
 def scraping_embedding(data:DataScrapingEmbedding):
+    s = ScrapingBeautifulSoup(logger=logger)
     
     if s.query is None:
         s.query = ""
@@ -185,6 +184,8 @@ def scraping_embedding(data:DataScrapingEmbedding):
 
     if data.http == None:
         return "Html not inserted"
+    
+    print("LISTA:",s.url_list)
 
     ris_scraping=s.scraping(
         initial_url=data.http,
@@ -219,7 +220,8 @@ def scraping_embedding(data:DataScrapingEmbedding):
         save_in_json('scraping_ris_gpt.json', s.summary_pages_list, True)
         return s.summary_pages_list
 
-    return s.scraping_result_list
+    res = s.scraping_result_list
+    return res
 
 
 class DataQuery(BaseModel):
