@@ -1,8 +1,8 @@
 .load_box {
-    height: 80vh; /* Imposta l'altezza a piena altezza della finestra */
+    height: 80vh;
     display: flex;
-    justify-content: center; /* Centra orizzontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center; 
+    align-items: center;
     background-color: rgba(255, 255, 255, 0.062);
     z-index: 1;
 }

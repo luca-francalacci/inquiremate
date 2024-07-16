@@ -135,15 +135,12 @@
 }
 
 
-/* ----------------------------------------------- */
-/* File CSS */
 .custom-select, .custom-input {
-  outline: none; /* Rimuove il bordo di selezione */
-  border: none; /* Rimuove il bordo del componente */
+  outline: none;
+  border: none; 
 }
 
-/* In alternativa, se vuoi mantenere un bordo ma non vuoi che cambi colore durante la selezione */
 .custom-select, .custom-input {
-  outline-color: transparent; /* Imposta il colore dell'outline a trasparente */
+  outline-color: transparent;
 }
 

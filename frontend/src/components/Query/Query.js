@@ -69,7 +69,6 @@ export default function Query({theme_color}){
                 <div id='div_error'>{queryError}</div>
                 <ButtonSendMsg theme_color={theme_color} onValueChange={submit_query}  />
             </div>
-            {/* Mostra l'immagine di caricamento solo quando load è true */}
             {load ?  
                 <div className='load_box'>
                 <div className='load'>
@@ -81,7 +80,7 @@ export default function Query({theme_color}){
                 style={{
                     backgroundColor: theme_color.main,
                     position: 'relative',
-                    overflow: 'auto', // Nasconde il testo che supera i limiti della div
+                    overflow: 'auto',
                     fontSize:'12pt',
                 }}>
                 <span style={{ position: 'absolute', margin: '0px', color: theme_color.contrastText}}>

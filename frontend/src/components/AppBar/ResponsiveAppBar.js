@@ -35,7 +35,6 @@ export default function ResponsiveAppBar({ theme_color, menu }) {
   function handleSetPage(page) {
     setCurrentPage(page);
     context[1](page);
-    // onIndexPageChange(page);
   }
 
   return (
@@ -103,7 +102,7 @@ export default function ResponsiveAppBar({ theme_color, menu }) {
               sx={{
                 display: { xs: 'block', md: 'none' },
                 '& .MuiPaper-root': {
-                  backgroundColor: theme_color.main, // Aggiungi questa linea
+                  backgroundColor: theme_color.main, 
                 },
               }}
             >

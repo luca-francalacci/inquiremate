@@ -11,7 +11,7 @@ export default function ButtonSendMsg({ theme_color, onValueChange  }) {
     <Button
       variant="contained"
       endIcon={<SendIcon />}
-      onClick={handleClickButton} // Passa la funzione per gestire il clic
+      onClick={handleClickButton}
       style={{
         backgroundColor: theme_color.light
       }}

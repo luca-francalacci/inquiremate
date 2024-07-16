@@ -23,7 +23,7 @@ export default function InputText({ theme_color, label, setInput, type='text' })
             color: theme_color.contrastText, 
             borderRadius: '5px',
             '& .MuiSelect-icon': {
-              fill: theme_color.contrastText, // Cambia il colore dell'icona
+              fill: theme_color.contrastText, 
             },        
         }}
         

@@ -30,19 +30,19 @@ export const theme = createTheme({
     MuiSwitch: {
       styleOverrides: {
         switchBase: {
-          color: select_color.contrastText // Controls default (unchecked) color for the thumb
+          color: select_color.contrastText 
         },
         colorPrimary: {
           "&.Mui-checked": {
-            color: select_color.contrastText // Controls checked color for the thumb
+            color: select_color.contrastText
           }
         },
         track: {
-          opacity: 0.7, // Controls default (unchecked) opacity for the track
-          backgroundColor: select_color.light, // Controls default (unchecked) color for the track
+          opacity: 0.7, 
+          backgroundColor: select_color.light, 
           ".Mui-checked.Mui-checked + &": {
-            opacity: 0.7, // Controls checked opacity for the track
-            backgroundColor: select_color.light // Controls checked color for the track
+            opacity: 0.7, 
+            backgroundColor: select_color.light
           }
         }
       }

@@ -126,7 +126,6 @@ export default function Scraping({theme_color}){
               {requestOk}
             </div>
           </div>
-          {/* Mostra l'immagine di caricamento solo quando load è true */}
           {load ?  
             <div className='load_box'>
               <div className='load'>

@@ -20,7 +20,6 @@ export default function SelectNumPag({ theme_color, data, label, changeValue }) 
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label"
           sx={{
-            // color: theme_color[valSelect ? 'secondary' : 'primary']
             color: theme_color.contrastText,
             '&.Mui-focused': {
               color: theme_color.contrastText
@@ -39,7 +38,7 @@ export default function SelectNumPag({ theme_color, data, label, changeValue }) 
             color: theme_color.contrastText,
             borderRadius: theme_color.borderRadius,
             '& .MuiSelect-icon': {
-              fill: theme_color.contrastText, // Cambia il colore dell'icona
+              fill: theme_color.contrastText,
             },
           }}
           MenuProps={{

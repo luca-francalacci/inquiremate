@@ -11,7 +11,7 @@ export default function ButtonClose({ theme_color, onValueChange  }) {
   return (
     <Button
       variant="contained"
-      onClick={handleClickButton} // Passa la funzione per gestire il clic
+      onClick={handleClickButton} 
       style={{
         backgroundColor: theme_color.light,
         paddingRight: 0,

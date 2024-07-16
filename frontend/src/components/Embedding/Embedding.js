@@ -1,6 +1,5 @@
 import * as React from 'react' 
 import ButtonSendMsg from '../ButtonSendMsg/ButtonSendMsg'
-// import './Scraping.css'
 import SelectNumPag from '../SelectNumPag/SelectNumPag'
 import InputText from '../InputText/InputText' 
 import loadSVG from '../../img/load.svg' 
@@ -22,7 +21,7 @@ export default function Embedding({theme_color}){
 
 
   const [newDeep, setNewDeep] = React.useState(null) 
-  const [load, setLoad] = React.useState(false)  // Imposta load su false all'inizio
+  const [load, setLoad] = React.useState(false) 
   const [isChecked, setIsChecked] = React.useState(false) 
   const [scraping, setScraping] = React.useState(0)
   const [apiResult, setApiResult] = React.useState(
@@ -38,9 +37,6 @@ export default function Embedding({theme_color}){
   function onValueChange() {
 
     if (model !== null && newCollection !== null) {
-
-      // Imposta load su true quando i valori sono pronti per l'invio
-      // setLoad(true) 
 
       let fetch_api=""
       let postData={}
@@ -97,7 +93,6 @@ export default function Embedding({theme_color}){
         })
         .catch(error => {
           console.error('Errore nella richiesta fetch:', error)
-          // Imposta load su false in caso di errore
           setApiResult("C'è stato un errore")
           setLoad(false)
         })
@@ -120,26 +115,18 @@ export default function Embedding({theme_color}){
             color: theme_color.contrastText,
             elevation: 3,
           }}>
-          {/* 
-          --------SWITCH
-          <div style={{
-            display:'flex',
-            justifyContent:'flex-end'
-          }}><CustomizedSwitches theme_color={theme_color} txt={["ricerca","http"]} setScraping={setScraping} /></div> */}
           
           {scraping === 0 ?(<>
               <InputText theme_color={theme_color} label={"Nome della collezione"} setInput={setNewCollection} />
               <SelectNumPag theme_color={theme_color} data={list_of_models} label={"Modello"} changeValue={setModel} />
             </>):(<>
               <InputText theme_color={theme_color} label={"Link"} setInput={setNewCollection} />
-              {/* <SelectNumPag theme_color={theme_color} data={depth} label={"Profondità"} changeValue={setNewDeep} /> */}
             </>)}
             <Checklist theme_color={theme_color} data={list_metadata} selectedDate={selectedDate} updateData={updateSelectedDate}/>
           
           <ButtonSendMsg theme_color={theme_color} onValueChange={onValueChange} />
         </div>
         
-        {/* Mostra l'immagine di caricamento solo quando load è true */}
         {load ?  
           <div className='load_box'>
             <div className='load'><img src={loadSVG} alt="Loading" /></div>
@@ -149,7 +136,7 @@ export default function Embedding({theme_color}){
         style={{
           backgroundColor: theme_color.main,
           position: 'relative',
-          overflow: 'auto', // Nasconde il testo che supera i limiti della div
+          overflow: 'auto', 
           fontSize:'12pt',
         }}
       >

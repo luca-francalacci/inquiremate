@@ -24,15 +24,12 @@ export default function Popup({ theme_color, changeButtonClose, list_link ,setRe
     const [linkError, setLinkError] = React.useState('')
     const [isChecked, setIsChecked] = React.useState(false);
 
-    // const list_metadata = ['Arte', 'Cucina', 'Cultura', 'Narrativa', 'Natura', 'Scienza', 'Sport', 'Hobby']
-    // const [selectedDate, setSelectedDate] = React.useState( Array.from({ length: list_metadata.length }, _ => false)) 
-
 
     const customStyles = {
         radio: {
-            color: theme_color.light, // colore del selettore
+            color: theme_color.light,
             '&.Mui-checked': {
-                color: theme_color.contrastText, // colore elemento selezionato
+                color: theme_color.contrastText,
             },
         },
     };
@@ -91,7 +88,6 @@ export default function Popup({ theme_color, changeButtonClose, list_link ,setRe
                 })
                 .catch(error => {
                     console.error('Errore nella richiesta fetch:', error)
-                // Imposta load su false in caso di errore
                     setLoad(false)
                     changeButtonClose(false)
                     setRequestOkay("Riprovare")
