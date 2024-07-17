@@ -17,8 +17,8 @@ export default function Query({theme_color}){
         setQueryError('')
     }
     function submit_query(){
-        setLoad(true)
         if(question.length>0){
+            setLoad(true)
             let postData = {
                 'query': question
             }
